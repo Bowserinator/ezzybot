@@ -292,7 +292,7 @@ class ezzybot(Socket):
                                     if hook.events[hook.events.index(event)].__name__ == evn.__name__:
                                         del self.events[self.events.index(evn)]
                                     #Delete renamed events
-                                    if evn.__module__ == import_name and evn.__name__ not in [e.__name__ for e in hook.events]:
+                                    elif evn.__module__ == import_name and evn.__name__ not in [e.__name__ for e in hook.events]:
                                         del self.events[self.events.index(evn)]
                             
                             print("Reloaded plugin " + str(module))
